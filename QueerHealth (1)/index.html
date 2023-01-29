@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Queer Health</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Michroma&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="wordart">
+        <div class="preview">QueerHealth</div>
+      </div>
+    </header>
+    <article class="main">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Qhpu5n6cLMuPYK92WoQD8GXRqDvFEfs&ehbc=2E312F" width="600"
+        height="600"></iframe>
+      <script src="script.js" type="module"></script>
+      <img class="press-reminder" src="imgs/arrow3.png" />
+      <div style="position:absolute; left:389px; top:130px; class=" press">Press! </div>
+      </p>
+    </article>
+    <aside class="aside aside-1">
+      <h2>Navigation</h2>
+      <a href="https://www.deviantart.com/zuckerbotwashere/art/I-Ship-It-Clippy-x-Mr-String-875852054">
+        <img class="nav-item"
+          src="imgs/kisspng-office-assistant-microsoft-corporation-microsoft-o-microsoft-office-2-19-s-ch-h-tr-trn-5b7e457f675534.8625983815350019834233.png">
+      </a>
+      <form action="/action_page.php">
+        <label for="name">Search Facilities:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+
+        <p class="tested">Green: STI/STD Testing</p>
+        <p class="assault">Dark Pink: Sexual Assault Resources</p>
+        <p class="abortion">Dark Magenta: Abortion</p>
+        <p class="std">Yellow: Student Resources @ UCLA</p>
+        <p class="condoms">Light Blue: Condoms</p>
+        <p class="preg">Purple: Pregnancy Testing</p>
+        <p class="HIV-med">Orange: PrEP & PEP</p>
+        <p class="plan-b">Magenta: Plan B/Morning After Pill</p>
+        <p class="gender">Dark Purple: Gender Affirming Medical Care</p>
+        <p class="mental-health">Light Orange: Mental Health</p>
+    </aside>
+ <aside class="aside aside-2">
+  <h2>Know of Another Location?</h2>
+  <img class="nav-item" src="imgs/pngwing.com.png">
+  <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <form action="/action_page.php">
+    <label for="name">Name of Facility:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address"><br><br>
+    <label for="services">Services Offered for LGBTQIA:</label><br>
+    <input type="text" id="services" name="services"><br><br>
+    <label for="rating">Rate Out of 5 Stars:</label><br>
+    <input type="text" id="rating" name="rating" value=""><br><br>
+    <input type="submit" value="Place on Map">
+  </form>
+</aside>
+
+    </body>
+    <footer class="footer">
+  <div class="emergency">
+      <p> If you have an emergency, PLEASE refer to the following (we care about you <3): </p>
+      <p> Crisis Hotline: 988</p>
+      <p> Sexual Assault Hotline: (800) 656-4673</p>
+
+      <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      </p>
+<shader-art role="img" aria-label="An animated valentines illustration" autoplay>
+  <script type="vert">
+    precision highp float;
+    attribute vec4 position;
+    varying vec2 vPos;
+    void main() {
+      vPos = position.xy;
+      gl_Position = position;
+    }
+  </script>
+  <script type="frag">
+    precision highp float;
+    varying vec2 vPos;
+    uniform vec2 resolution;
+    uniform float time;
+    const float PI = 3.141592654;
+    const float DEG = PI / 180.;
+    
+    vec2 rotate(in vec2 p, in float a) {
+      return vec2(p.x * cos(a) - p.y * sin(a),
+                  p.x * sin(a) + p.y * cos(a));
+    }
+    
+    vec2 repeat(in vec2 p, in vec2 c) {
+      return mod(p, c) - 0.5 * c;
+    }
+    
+    vec3 blend(vec3 a, vec3 b, float t) {
+      return sqrt(
+        (1. - t) * pow(a,vec3(2.)) + t * pow(b,vec3(2.)));
+    }
+    
+    vec3 pride(float x) {
+      vec3 color1 = vec3(1., 0., 0.);
+      vec3 color2 = vec3(1., .5, 0.);
+      vec3 color3 = vec3(1., 1., 0.);
+      vec3 color4 = vec3(0., .5, 0.);
+      vec3 color5 = vec3(0., .0, 1.);
+      vec3 color6 = vec3(.5, .0,.6);
+      float s = 6.;
+      float b = 0.1;
+      vec3 color = blend(color6, color1, smoothstep(0., b, x));
+      color = blend(color, color2, smoothstep(1./s, 1./s + b, x));
+      color = blend(color, color3, smoothstep(2./s, 2./s+b, x));
+      color = blend(color, color4, smoothstep(3./s, 3./s+b, x));
+      color = blend(color, color5, smoothstep(4./s, 4./s+b, x));
+      color = blend(color, color6, smoothstep(5./s, 5./s+b, x));
+      return color;
+    }
+    
+    // function from https://www.shadertoy.com/view/3ll3zr
+    float sdHeart(in vec2 p, float s) {
+      p /= s;
+      vec2 q = p;
+      q.x *= 0.5 + .5 * q.y;
+      q.y -= abs(p.x) * .63;
+      return (length(q) - .7) * s;
+    }
+    
+    float sdCircle(in vec2 p, float r) {
+      return length(p) - r;
+    }
+    
+    float sdBox( in vec2 p, in vec2 b ) {
+      vec2 d = abs(p)-b;
+      return length(max(d,0.0)) + min(max(d.x,d.y),0.0);
+    }
+    
+    // 2D Random
+    float random (in vec2 st) {
+      return fract(sin(dot(st.xy,
+                           vec2(12.9898,78.233)))
+                   * 43758.5453123);
+    }
+
+    // 2D Noise based on Morgan McGuire @morgan3d
+    // https://www.shadertoy.com/view/4dS3Wd
+    float noise(in vec2 st) {
+      vec2 i = floor(st);
+      vec2 f = fract(st);
+
+      // Four corners in 2D of a tile
+      float a = random(i);
+      float b = random(i + vec2(1.0, 0.0));
+      float c = random(i + vec2(0.0, 1.0));
+      float d = random(i + vec2(1.0, 1.0));
+
+      // Smooth Interpolation
+
+      // Cubic Hermine Curve. 
+      vec2 u = smoothstep(0.,1.,f);
+
+      // Mix 4 coorners percentages
+      return mix(a, b, u.x) +
+        (c - a)* u.y * (1.0 - u.x) +
+        (d - b) * u.x * u.y;
+    }
+    
+    // cosine based palette, 4 vec3 params, by IQ
+    vec3 palette(in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d) {
+      return a + b*cos(6.28318*(c*t+d));
+    }
+    
+    vec2 pixellate(in vec2 p, float r) {
+      return floor(p * 100. / r) * (r / 100.);
+    }
+    
+    float pixellate(in float p, float r) {
+      return floor(p * 100. / r) * (r / 100.);
+    }
+    
+    vec3 stars(in vec2 p, in float zoom, in float speed) {
+      float g = 5.;
+      vec2 p0 = rotate(p, 45. * DEG);
+      vec2 p1 = p0 * zoom + vec2(time * speed);
+      vec2 p2 = repeat(p1, vec2(g));
+      float d2 = step(.97, noise(g * mod(floor(p1 / g), 50.)));
+      float d = sdBox(rotate(p2, -45. * DEG), vec2(g / 8.));
+      
+      vec3 black = vec3(0);
+      vec3 white = vec3(1.);
+      float m = smoothstep(.0, .4, d);
+      return mix(d2 * white, black, m);
+    }
+    
+    vec3 background(in vec2 p) {
+      vec2 pn = vec2(sin((p.x * .5 + time * .5) / PI), sin(p.y * .5));
+      vec3 sky = noise(pn) * vec3(0, .2, .3);
+      vec2 pL = pixellate(p, 4.);
+      float curve = .1 * sin(time * 4. + pL.x * 4.);
+      float rainbow = step(pL.x, .6) * (1. - smoothstep(.35,.39, pL.y + curve)) * 
+        (1. - smoothstep(.24, .28, -pL.y - curve)); 
+      vec3 rainbowColor = pride(mod(1. - (pL.y + curve + .25) * 1.5, 1.));
+      vec3 bg = mix(sky, rainbowColor, rainbow);
+      vec3 color = bg + stars(p, 100., 20.) * .5 * (1. - rainbow);
+      return color;
+    }
+    
+    vec3 shade(in vec2 p) {
+      vec3 fg = vec3(1., 0., .5);
+      vec3 bg = background(p);
+      vec2 pL = pixellate(p, 4.);
+      float d = sdHeart(pL - vec2(.67, sin(time * 3.) *.05), .7 + .1 * sin(time * 4.));
+      float m = smoothstep(0., .05, d);
+      // m = 1.;
+      vec3 color = mix(fg - .5 * sin(d * 2.), bg, m) + stars(p, 50., 20.);
+      return color;
+    }
+    
+
+    void main() {
+      float zoom = 7.;
+      vec2 p = (gl_FragCoord.xy / resolution - .5) * zoom;
+      p.y *= resolution.y / resolution.x;
+      gl_FragColor = vec4(shade(p), 1.);
+    }
+  </script>
+</shader-art>
+    </footer>
+  </div>
+  <!-- This script places a badge on your repl's full-browser view back to your repl's cover page. Try various colors
+    for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink ! -->
+<!--   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> -->
+
+</html>
